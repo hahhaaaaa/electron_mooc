@@ -17,11 +17,15 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^8.0.0",
     "nodemon": "^2.0.2"
   },
   "dependencies": {
-    "boostrap": "^2.0.0",
-    "bootstrap": "^4.4.1"
+    "bootstrap": "^4.3.1",
+    "bootstrap-table": "^1.16.0",
+    "electron": "^8.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7",
+    "xml2js": "^0.4.23",
+    "xmlreader": "^0.2.3"
   }
 }

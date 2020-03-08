@@ -1,36 +1,115 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Electron 音乐播放器</title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="./index.css"> -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-table/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
-  <div class="container mt-4">
-    <h1>我的播放器</h1>
-    <button type="button" id="add-music-button" class="btn btn-primary btn-lg btn-block mt-4">
-      添加歌曲到曲库
-    </button>
-    <div id="tracksList" class="mt-4">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="navbar-brand  col-md-7 text-white inline-block vertical-middle-sm" style=" -webkit-app-region: drag">
+      <img src="../icon.png" width="20" height="20" class="d-inline-block align-middle" alt="">
+      <small class="">数据生成工具</small>
     </div>
-  </div>
-  <div class="container fixed-bottom bg-white pb-4">
-    <hr />
-    <div class="row my-2" id="player-status">
-    </div>
-    <div class="progress">
-      <div class="progress-bar bg-success" id="player-progress" role="progressbar" style="width: 0%;">
-        0%
+    <!-- <a class="navbar-brand text-white">数据生成工具</a> -->
+    <!-- <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </nav>
+  <div class='container-fluid pt-5'>
+    <div class="mt-2">
+      <div class='alert alert-success'>一.添加加密狗</div>
+      <div class='card mb-3'>
+        <div class='card-body pt-3 pt-3'>
+          <div class="form-gruop form-inline">
+            <div class='formItem col-md-4 row align-items-center text-left'>
+              <label for="" class=" col-md-3">加密狗ID</label>
+              <input type="text" class="form-control col-md-7 secreteId">
+            </div>
+            <div class='formItem col-md-6 row align-items-center text-left'>
+              <label for="" class="col-md-2">授权文件</label>
+              <div class="input-group col-md-9">
+                <input type="text" class="form-control" placeholder="指定文件[auth_code.xml]"
+                  aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">选择文件夹</button>
+                </div>
+              </div>
+            </div>
+            <div class='formItem col-md-2 row align-items-center'>
+              <button type="button" class="btn btn-success addsercretID">添加密码狗</button>
+            </div>
+          </div>
+        </div>
       </div>
+      <table class="table table-bordered" id="table" data-toggle="table"
+      data-height="200" >
+      </table>
     </div>
+    <div class="mt-4 shadow-sm">
+      <div class='alert alert-success'>二.添加授权设备</div>
+      <div class='card mb-3'>
+        <div class='card-body pt-3 pb-3'>
+          <div class="form-gruop form-inline">
+            <div class='formItem col-md-4 row align-items-center text-left'>
+              <label for="" class=" col-md-3">设备类型</label>
+              <div class="dropdown col-md-7">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  请选择设备类型
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+            <div class='formItem col-md-6 row align-items-center text-left'>
+              <label for="" class="col-md-2">设备标识</label>
+              <div class="input-group col-md-7">
+                <input type="text" class="form-control" aria-label="Recipient's username"
+                  aria-describedby="button-addon2">
+              </div>
+            </div>
+            <div class='formItem col-md-2 row align-items-center'>
+              <button type="button" class="btn btn-success">添加授权设备</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <table class="table table-bordered mt-2" id="table">
+        <thead class="">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">内容</th>
+            <th scope="col">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>  -->
+    </div>
+
+    <!-- <div class="mt-4">
+      <div class='alert alert-success'>三.生成加密文件</div>
+    </div> -->
   </div>
 </body>
 <script>
+  // require('./index.js')
+  window.$ = window.jQuery = require('jquery');
+  require('popper.js/dist/umd/popper.min.js')
+  require('bootstrap/dist/js/bootstrap.min.js');
+  require('bootstrap-table/dist/bootstrap-table.min.js')
+  require('../node_modules/bootstrap-table/dist/bootstrap-table-locale-all.min.js')
   require('./index.js')
-  
+  // $('.dropdown-toggle').dropdown()
 </script>
+
 </html>

@@ -1,0 +1,26 @@
+navbar-nav>li>a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  }
+  .navbar-brand {
+   height: 25px;
+   line-height: 25px;
+   padding-top: 2px;
+  }
+.navbar {
+   min-height: 25px;
+  }
+  
+
+  .table>tbody>tr>td {
+    border: 0px;
+    text-align: center;
+}
+
+.bootstrap-table .table thead>tr>th {
+    text-align: center;
+}
+
+/* .table thead {
+    background: #ebeaea;
+} */
