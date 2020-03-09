@@ -14,9 +14,11 @@ let addSecrete = {
 
     addsercretID: $('.addsercretID'),
 
-    cuurentXML: '',
+    cuurentXML: null,
 
     currentValue: '',
+
+    auth_file: $('.auth_files'),
 
     dogauthArgs: []
   },
@@ -27,7 +29,16 @@ let addSecrete = {
     this.renderTable(this.config.dogauthArgs)
 
     this.config.addsercretID.click(() => {
-      console.log('123')
+      if(this.currentValue&& this.cuurentXML){
+        // currentValue不可重复
+        let {dogId,dogXml} = {dogId:this.config.currentValue,dogXml:this.config.cuurentXML}
+        this.dogauthArgs.push({dogId,dogXml})
+        
+      }else{
+        this.config.currentXML = ''
+        this.config.auth_file.val(this.config.cuurentXML)
+        return;
+      }
     })
   
   },
@@ -41,18 +52,22 @@ let addSecrete = {
         { name: 'XML', extensions: ['xml'] },
       ]
     }
-
+ 
     dialog.showOpenDialog(options).then(result => {
-      // console.log(result.filePaths[0])
       if(result.canceled){
-        
          return 
       }
+      this.config.cuurentXML = result.filePaths[0]
+      this.config.auth_file.val(this.config.cuurentXML)
       this.XmlRender(result.filePaths[0]).then(res => {
         console.log(res)
+        // this.config.cuurentXML = res
+
       })
     }).catch(err => {
-      console.err(err)
+      console.log(err)
+      this.config.cuurentXML = null 
+      this.config.auth_file.val(this.config.cuurentXML)
     })
   },
   XmlRender (filePath) {
@@ -104,6 +119,14 @@ let addSecrete = {
       locale:'zh-CN'
     })
   },
+  toUtil(from,...selectors){
+    return  [...selectors].map(s =>
+         s.replace(/\[([^\[\]]*)\]/g, '.$1.')
+        .split('.') .filter(t => t !== '') 
+        .reduce((prev, cur) => prev && prev[cur], from) );
+        // const obj = { selector: { to: { val: 'val to select' } }, target: [1, 2, { a: 'test' }] }; 
+    // Example get(obj, 'selector.to.val', 'target[0]', 'target[2].a'); // ['val to select', 1, 'test']
+  }
  
 }
 

@@ -10,14 +10,14 @@ class AppWindow extends BrowserWindow {
       transparent:true,
       webPreferences: {
         nodeIntegration: true
-      } 
-    } 
+      }
+    }
     const finalConfig = { ...basicConfig, ...config }
     super(finalConfig)
     this.loadFile(fileLocation)
     this.once('ready-to-show', () => {
       this.show() 
-    }) 
+    })
   }
 }
 //单一实例

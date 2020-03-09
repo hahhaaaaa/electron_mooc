@@ -6,6 +6,7 @@
   <title>Electron 音乐播放器</title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../node_modules/bootstrap-table/dist/bootstrap-table.min.css">
+  <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="./index.css">
 </head>
 
@@ -15,11 +16,11 @@
       <img src="../icon.png" width="20" height="20" class="d-inline-block align-middle" alt="">
       <small class="">数据生成工具</small>
     </div>
-    <!-- <a class="navbar-brand text-white">数据生成工具</a> -->
-    <!-- <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
+    <div class="inlineo offset-2 col-md-3 row justify-content-end" style=" -webkit-app-region: no-drag">
+      <i  class="offset-1 text-white fa fa-minus-square fa-lg"></i>
+      <i class="offset-1 text-white fa fa-plus-square fa-lg"></i>
+      <i class="offset-1 text-danger fa fa-window-close fa-lg"></i>
+    </div> 
   </nav>
   <div class='container-fluid pt-5'>
     <div class="mt-2">
@@ -29,12 +30,12 @@
           <div class="form-gruop form-inline">
             <div class='formItem col-md-4 row align-items-center text-left'>
               <label for="" class=" col-md-3">加密狗ID</label>
-              <input type="text" class="form-control col-md-7 secreteId">
+              <input type="text" class="form-control col-md-7 secreteId" >
             </div>
             <div class='formItem col-md-6 row align-items-center text-left'>
               <label for="" class="col-md-2">授权文件</label>
               <div class="input-group col-md-9">
-                <input type="text" class="form-control" placeholder="指定文件[auth_code.xml]"
+                <input type="text" class="form-control auth_files" placeholder="指定文件[auth_code.xml]"
                   aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" type="button" id="button-addon2">选择文件夹</button>
